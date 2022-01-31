@@ -1,0 +1,5 @@
+from tornado.ioloop import IOLoop
+io_loop = IOLoop()
+io_loop.stop()
+io_loop.clear_current()
+io_loop.close()
