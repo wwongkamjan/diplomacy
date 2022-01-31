@@ -477,3 +477,10 @@ def test_game_7_press():
     _ = Server()            # Initialize cache to prevent timeouts during tests
     game_path = os.path.join(FILE_FOLDER_NAME, 'game_data_7_press.csv')
     run_with_timeout(lambda: run_game_data(7, ['IGNORE_ERRORS', 'POWER_CHOICE'], game_path), 60)
+    
+def main():
+    test_game_7_press()
+
+
+if __name__ == '__main__':
+    main()
