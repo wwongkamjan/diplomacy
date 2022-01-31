@@ -271,11 +271,11 @@ class ClientCommsSimulator:
 
         except StreamClosedError as err:
             LOGGER.error('Stream closed: %s', err)
-            yield false
-            return
+            #yield false
+            return false
         
-        yield bool(self._comms)
-        return
+        #yield bool(self._comms)
+        return bool(self._comms)
 
 class ClientsCommsSimulator:
     """ Represents multi clients's communications """
