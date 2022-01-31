@@ -271,7 +271,8 @@ class ClientCommsSimulator:
 
         except StreamClosedError as err:
             LOGGER.error('Stream closed: %s', err)
-            return False
+            yield false
+            return
 
         return bool(self._comms)
 
