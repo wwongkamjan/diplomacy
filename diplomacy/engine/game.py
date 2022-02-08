@@ -815,8 +815,8 @@ class Game(Jsonable):
         """
         for power_name, controller in powers_controllers.items():
             self.get_power(power_name).update_controller(controller, timestamps[power_name])
-
-    def new_power_message(self, recipient, body):
+#     def new_power_message(self, recipient, body):
+    def new_power_message(self, sender, recipient, body):
         """ Create a undated (without timestamp) power message to be sent from a power to another via server.
             Server will answer with timestamp, and message will be updated
             and added to local game messages.
@@ -826,10 +826,11 @@ class Game(Jsonable):
             :return: a new GameMessage object.
             :rtype: GameMessage
         """
-        assert self.is_player_game()
+#         assert self.is_player_game()
         if not self.has_power(recipient):
             raise exceptions.MapPowerException(recipient)
-        return Message(phase=self.current_short_phase, sender=self.role, recipient=recipient, message=body)
+#         return Message(phase=self.current_short_phase, sender=self.role, recipient=recipient, message=body)
+        return Message(phase=self.current_short_phase, sender=sender, recipient=recipient, message=body)
 
     def new_global_message(self, body):
         """ Create an undated (without timestamp) global message to be sent from a power via server.
