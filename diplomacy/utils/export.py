@@ -51,11 +51,7 @@ def to_saved_game_format(game, output_path=None, output_mode='a'):
         phase_dct['state']['game_id'] = game.game_id
         phase_dct['state']['map'] = game.map_name
         phase_dct['state']['rules'] = rules
-        if phase_dct['name']]!='COMPLETED' :
-            for m in game.message_history[phase_dct['name']].values():
-                print(m)
-#             phase_dct['messages'] = [m for m in game.message_history[phase_dct['name']].values()]
-
+        
     # Building saved game
     saved_game = {'id': game.game_id,
                   'map': game.map_name,
