@@ -107,6 +107,11 @@ class SortedDict:
             raise TypeError('Expected value type %s, got %s' % (self.__val_type, type(value)))
         if key not in self.__keys:
             self.__keys.add(key)
+        else:
+            cnt = 1
+            while key in self.__keys:
+                key = str(key) + "-" + str(cnt) 
+                cnt +=1
         self.__couples[key] = value
 
     def remove(self, key):
